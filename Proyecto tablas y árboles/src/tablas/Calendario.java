@@ -47,7 +47,7 @@ public class Calendario extends JFrame implements VistaCalendario {
 		
 		añadirDiasSemana();
 		ControladorCalendario.añadirDias(
-				jlMonths.getSelectedIndex()+1, 
+				jlMonths.getSelectedIndex(), 
 				(Integer) jcbYears.getSelectedItem());
 		
 		this.add(jcbYears);

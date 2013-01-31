@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import crackeador.DiccionarioPalabras;
 
-public class CrackDiccionario {
+public class CrackDiccionario extends Thread{
 
 	private String host, diccionarioUsuario, diccionarioPassword;
 	private int puerto;

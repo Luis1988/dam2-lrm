@@ -196,7 +196,7 @@ public class Crackeador extends JFrame implements VistaCrackeador {
 
 	@Override
 	public void setResultado(String res) {
-		if(txtResultado.getText().equals("") || txtResultado.getText().equals(null))
+		if(txtResultado.getText().equals("") || txtResultado.getText().equals(null) || res.equals(""))
 			txtResultado.setText(res);
 		else
 			txtResultado.setText(txtResultado.getText()+"\n"+res);

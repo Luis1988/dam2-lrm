@@ -55,7 +55,7 @@ public class HebraCrack extends Thread{
 				}
 				pos++;
 			}
-			if(Thread.activeCount() == 6){
+			if(Thread.activeCount() == 6 || vc.isSecuencial()){
 				vc.habilitaBotones(true);
 				long tiempoTotal = System.currentTimeMillis()-CrackDiccionario.tiempo;
 				vc.setTiempo(tiempoTotal);
@@ -78,6 +78,7 @@ public class HebraCrack extends Thread{
 			servidor = new Socket(cd.getHost(), cd.getPuerto());
 			fEnt = new BufferedReader(new InputStreamReader(servidor.getInputStream()));
 			fSal = new PrintWriter(servidor.getOutputStream(), true);
+			pos--;
 			run();
 		} catch (IOException e) {
 			e.printStackTrace();

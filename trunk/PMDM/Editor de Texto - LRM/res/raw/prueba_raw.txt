@@ -1,0 +1,3 @@
+Prueba de sólo lectura de un fichero interno de una aplicación
+
+Esta aplicación no tiene demasiada utilidad, excepto para almacenar propiedades propias de la aplicación

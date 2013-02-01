@@ -78,7 +78,7 @@ public class ColaCoches implements Queue {
 		return null;
 	}
 	
-	public ColaCoches clone(Object o){
+	public ColaCoches clone(){
 		ColaCoches copia = null;
 		try{
 			copia = (ColaCoches) super.clone();

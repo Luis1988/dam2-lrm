@@ -8,7 +8,5 @@
 </head>
 <body>
 <jsp:include page="topPage.jsp" />
-<jsp:include page="leftPage.jsp" />
-<jsp:include page="footPage.jsp" />
 </body>
 </html>

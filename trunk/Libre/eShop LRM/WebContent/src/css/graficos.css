@@ -1,5 +1,30 @@
 @CHARSET "UTF-8";
 
-.tHead{
-	vertical-align: middle;
+.topPage{
+	background-image: url("/eShop_LRM/src/img/bg_header.gif");
+}
+
+.logo{
+	text-align: left;
+	float: left;
+	width: 49%;
+	display: inline;
+}
+
+.logo p{
+	font-family: sans-serif;
+  	font-size: 26px;
+  	color: #ffffff;
+  	vertical-align: middle;	
+}
+
+.carrito{
+	float: left;
+	text-align: right;
+	width: 50%;
+	display: inline;
+}
+
+.carrito p{
+	vertical-align: middle;	
 }

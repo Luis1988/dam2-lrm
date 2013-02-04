@@ -1,8 +1,5 @@
 package tablas;
 
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JList;
@@ -46,9 +43,14 @@ public class Calendario extends JFrame implements VistaCalendario {
 		jtCalendario.setBounds(10, 125, 475, 112);
 		
 		añadirDiasSemana();
+		ControladorCalendario.setVista(this);
 		ControladorCalendario.añadirDias(
 				jlMonths.getSelectedIndex(), 
 				(Integer) jcbYears.getSelectedItem());
+		
+		jlMonths.addListSelectionListener(new ControladorCalendario(this));
+		jcbYears.addItemListener(new ControladorCalendario(this));
+				
 		
 		this.add(jcbYears);
 		this.add(jsMonths);
@@ -71,6 +73,16 @@ public class Calendario extends JFrame implements VistaCalendario {
 		
 		new Calendario();
 		
+	}
+
+	@Override
+	public int getMes() {
+		return jlMonths.getSelectedIndex();
+	}
+
+	@Override
+	public int getAño() {
+		return (Integer) jcbYears.getSelectedItem();
 	}
 
 }

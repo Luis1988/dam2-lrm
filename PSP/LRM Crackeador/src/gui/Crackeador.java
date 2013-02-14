@@ -53,6 +53,7 @@ public class Crackeador extends JFrame implements VistaCrackeador {
 	 * Create the frame.
 	 */
 	public Crackeador() {
+		setResizable(false);
 		setTitle("Crackeador FTP - Luis Romero Moreno");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 335);

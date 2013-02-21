@@ -72,6 +72,7 @@ namespace WindowsFormsApplication1
             {
                 new ControladorNumerico(((Button)sender).Text, this);
             }
+            btnIgual.Focus();
         }
 
         /*
@@ -83,6 +84,7 @@ namespace WindowsFormsApplication1
         private void btn_operaciones(object sender, EventArgs e)
         {
             new ControladorOperaciones(((Button)sender).Text, this);
+            btnIgual.Focus();
         }
 
         /*
@@ -209,6 +211,7 @@ namespace WindowsFormsApplication1
             {
                 new ControladorOperaciones(e.KeyChar.ToString(), this);
             }
+            btnIgual.Focus();
         }
 
         /*

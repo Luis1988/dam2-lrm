@@ -7,3 +7,13 @@ c:\users\luis1988\documents\visual studio 2012\Projects\WindowsFormsApplication1
 c:\users\luis1988\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 c:\users\luis1988\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 c:\users\luis1988\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PanelCalculadora.resources
+C:\Documents and Settings\Usuario\Mis documentos\Visual Studio 2010\Projects\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Documents and Settings\Usuario\Mis documentos\Visual Studio 2010\Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Documents and Settings\Usuario\Mis documentos\Visual Studio 2010\Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Documents and Settings\Usuario\Mis documentos\Visual Studio 2010\Projects\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Documents and Settings\Usuario\Mis documentos\Visual Studio 2010\Projects\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Documents and Settings\Usuario\Mis documentos\Visual Studio 2010\Projects\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Usuario\Mis documentos\Visual Studio 2010\Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PanelCalculadora.resources
+C:\Documents and Settings\Usuario\Mis documentos\Visual Studio 2010\Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Documents and Settings\Usuario\Mis documentos\Visual Studio 2010\Projects\WindowsFormsApplication1\obj\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Usuario\Mis documentos\Visual Studio 2010\Projects\WindowsFormsApplication1\obj\Debug\GenerateResource.write.1.tlog

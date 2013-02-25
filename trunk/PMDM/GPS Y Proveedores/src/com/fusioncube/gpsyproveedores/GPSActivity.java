@@ -30,20 +30,12 @@ public class GPSActivity extends Activity {
 		final LocationManager milocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 		final LocationListener milocListener = new MiLocationListener(this);
 
-		milocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, milocListener);
-
 		btnActivar.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				if (milocManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
-
-					milocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
-							20000, 0, milocListener);
-				}
-				else{
-					milocListener.onProviderEnabled(LocationManager.GPS_PROVIDER);
-				}
+			    milocManager.requestLocationUpdates(
+			        LocationManager.GPS_PROVIDER, 0, 0, milocListener);
 			}
 		});
 
@@ -51,7 +43,7 @@ public class GPSActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				
+				milocManager.removeUpdates(milocListener);
 			}
 		});
 	}

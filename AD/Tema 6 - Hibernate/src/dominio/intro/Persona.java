@@ -7,7 +7,12 @@ public class Persona {
 	
 	public Persona(){}
 	
-	public Persona(String nom){
+	public Persona(String nom) {
+		nombre = nom;
+	}
+	
+	public Persona(long id, String nom) {
+		this.id = id;
 		nombre = nom;
 	}
 	

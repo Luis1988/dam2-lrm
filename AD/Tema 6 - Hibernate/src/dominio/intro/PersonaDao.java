@@ -3,22 +3,22 @@ package dominio.intro;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-
 import util.HibernateUtil;
 
 public class PersonaDao {
-	
 	private static SessionFactory sessionFactory;
-	
 	public static void main(String[] args) {
 		Session session = null;
-		long id = 0;
-		
-		try {
-			try {
+		long id=0;
+		try
+		{
+			try
+			{
 				sessionFactory = HibernateUtil.getSessionFactory();
-			} catch (Throwable ex) {
-				System.err.println("Fallo al crear el objeto sessionFactory. "+ex);
+			}
+			catch (Throwable ex)
+			{
+				System.err.println("Fallo al crear el objeto sessionFactory."+ ex);
 				throw new ExceptionInInitializerError(ex);
 			}
 			session = sessionFactory.openSession();
@@ -26,8 +26,7 @@ public class PersonaDao {
 			System.out.println("Insertando registro");
 			Transaction tx = session.beginTransaction();
 			persona.setNombre("Carmen");
-			id = (Long) session.save(persona);
-			
+			id= (Long) session.save(persona);
 			tx.commit();
 			System.out.println("Hecho");
 		} catch (Exception e) {
@@ -36,5 +35,4 @@ public class PersonaDao {
 			session.close();
 		}
 	}
-
 }

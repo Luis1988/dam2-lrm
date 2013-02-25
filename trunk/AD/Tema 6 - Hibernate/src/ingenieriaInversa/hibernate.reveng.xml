@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table schema="SCOTT" name="SALGRADE">
+		<column name="GRADE"></column>
+		<column name="LOSAL"></column>
+		<column name="HISAL"></column>
+	</table>
+	<table schema="SCOTT" name="BONUS">
+		<column name="ENAME"></column>
+		<column name="JOB"></column>
+		<column name="SAL"></column>
+		<column name="COMM"></column>
+	</table>
+	<table schema="SCOTT" name="EMP">
+		<column name="EMPNO"></column>
+		<column name="ENAME"></column>
+		<column name="JOB"></column>
+		<column name="MGR"></column>
+		<column name="HIREDATE"></column>
+		<column name="SAL"></column>
+		<column name="COMM"></column>
+		<column name="DEPTNO"></column>
+	</table>
+	<table schema="SCOTT" name="DEPT">
+		<column name="DEPTNO"></column>
+		<column name="DNAME"></column>
+		<column name="LOC"></column>
+	</table>
+</hibernate-reverse-engineering>

@@ -20,6 +20,7 @@ public interface VistaEditor {
 	public static final String T_PREDETERMINADA = "T_PREDETERMINADA";
 	public static final String GUARDAR = "GUARDAR";
 	public static final String ABRIR = "ABRIR";
+	public static final String ACERCA_DE = "ACERCA DE";
 	
 	public void habilitarItemEdicion(boolean flag);
 	public JTextArea getAreaTexto();

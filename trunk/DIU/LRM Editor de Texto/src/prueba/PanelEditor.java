@@ -33,7 +33,7 @@ public class PanelEditor extends JFrame implements VistaEditor {
 	private JMenu jmArchivo, jmEdicion, jmOpciones, jmFuente, jmTamaño, jmAyuda;
 	private JMenuItem jmItemSalir, jmItemCortar, jmItemCopiar, jmItemPegar;
 	private JMenuItem jmItemAbrir, jmItemGuardar, jmItemCopiar2, jmItemPegar2;
-	private JMenuItem jmItemCortar2;
+	private JMenuItem jmItemCortar2, jmAcercaDe;
 	private JCheckBoxMenuItem jmItemCourierNew, jmItemArial, jmItemFPredeterminada;
 	private JCheckBoxMenuItem jmItem16, jmItem24, jmItemTPredeterminado;
 	private JButton jbtCortar, jbtCopiar, jbtPegar;
@@ -110,10 +110,13 @@ public class PanelEditor extends JFrame implements VistaEditor {
 		jmTamaño.add(jmItemTPredeterminado);
 		jmOpciones.add(jmTamaño);
 		jmAyuda = new JMenu("Ayuda");
-		// TODO Acerca de con el ayuda y añadir ayuda
+		jmAyuda.setMnemonic('u');
+		jmAcercaDe = new JMenuItem("Acerca del Editor de Texto", new Integer('d'));
+		jmAyuda.add(jmAcercaDe);
 		menuBar.add(jmArchivo);
 		menuBar.add(jmEdicion);
 		menuBar.add(jmOpciones);
+		menuBar.add(jmAyuda);
 
 		jbtCortar = new JButton();
 		jbtCortar.setIcon(new ImageIcon(getClass().getResource("/img/cortar.gif")));
@@ -156,6 +159,7 @@ public class PanelEditor extends JFrame implements VistaEditor {
 		jbtCopiar.setActionCommand(VistaEditor.COPIAR);
 		jbtCortar.setActionCommand(VistaEditor.CORTAR);
 		jbtPegar.setActionCommand(VistaEditor.PEGAR);
+		jmAcercaDe.setActionCommand(VistaEditor.ACERCA_DE);
 		habilitarItemEdicion(false);
 
 		controladorEdicion(this);
@@ -224,6 +228,7 @@ public class PanelEditor extends JFrame implements VistaEditor {
 		jmItemSalir.addActionListener(new ControladorEdicion(ve));
 		jmItemGuardar.addActionListener(new ControladorEdicion(ve));
 		jmItemAbrir.addActionListener(new ControladorEdicion(ve));
+		jmAcercaDe.addActionListener(new ControladorEdicion(ve));
 	}
 
 	public void controladorOpciones(VistaEditor ve){
@@ -287,7 +292,7 @@ public class PanelEditor extends JFrame implements VistaEditor {
 	@Override
 	public void setTamañoComponentes(int ancho, int altura) {
 		toolBar.setSize(ancho-6, toolBar.getHeight());
-		panelDesplazamiento.setSize(ancho-15, altura-97);
+		panelDesplazamiento.setSize(ancho-7, altura-93);
 	}
 	
 	public JPopupMenu getMenuPop() {

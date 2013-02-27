@@ -8,7 +8,7 @@
   <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:datoslrm</property>
   <property name="hibernate.connection.username">scott</property>
   <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
-  <property name="hibernate.hbm2ddl.auto">create-update</property>
+  <property name="hibernate.hbm2ddl.auto">update</property>
   <property name="hibernate.show_sql">true</property>
   <mapping resource="Persona.hbm.xml"/>
  </session-factory>

@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -71,6 +72,9 @@ public class ControladorEdicion implements ActionListener, MouseListener {
 							"Error de lectura", JOptionPane.ERROR_MESSAGE);
 				}
 			}
+		}
+		if(ae.getActionCommand().equals(VistaEditor.ACERCA_DE)){
+			new JDialog(new AcercaDe());
 		}
 	}
 

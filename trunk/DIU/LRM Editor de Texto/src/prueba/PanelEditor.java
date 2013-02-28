@@ -17,6 +17,7 @@ import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JToolBar;
 import javax.swing.KeyStroke;
+
 import java.awt.Toolkit;
 
 public class PanelEditor extends JFrame implements VistaEditor {
@@ -291,8 +292,19 @@ public class PanelEditor extends JFrame implements VistaEditor {
 
 	@Override
 	public void setTamañoComponentes(int ancho, int altura) {
-		toolBar.setSize(ancho-6, toolBar.getHeight());
-		panelDesplazamiento.setSize(ancho-7, altura-93);
+		String OS = System.getProperty("os.name").toLowerCase();
+		if(OS.equals("windows 7") || OS.equals("windows vista")){
+			toolBar.setSize(ancho-16, toolBar.getHeight());
+			panelDesplazamiento.setSize(ancho-14, altura-96);
+		}
+		if(OS.equals("windows xp")){
+			toolBar.setSize(ancho-6, toolBar.getHeight());
+			panelDesplazamiento.setSize(ancho-7, altura-93);
+		}
+		else {
+			toolBar.setSize(ancho-6, toolBar.getHeight());
+			panelDesplazamiento.setSize(ancho-7, altura-93);
+		}
 	}
 	
 	public JPopupMenu getMenuPop() {

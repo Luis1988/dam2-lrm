@@ -1,5 +1,7 @@
 Changelog:
 
+v1.9 -> Agregada la opción de deshacer y rehacer
+v1.8 -> Agregado modelo al programa para leer y guardar, y edición del título del programa
 v1.7 -> Corregido problema de redimensionamiento (ahora detecta que SO usas)
 v1.6 -> Agregado el menu acerca de, y de este Changelog
 v1.5 -> Corregido el problema que al pulsar maximizar no se redimensionaba la ventana

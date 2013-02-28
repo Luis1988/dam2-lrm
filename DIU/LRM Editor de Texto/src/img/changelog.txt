@@ -1,0 +1,10 @@
+Changelog:
+
+v1.7 -> Corregido problema de redimensionamiento (ahora detecta que SO usas)
+v1.6 -> Agregado el menu acerca de, y de este Changelog
+v1.5 -> Corregido el problema que al pulsar maximizar no se redimensionaba la ventana
+v1.4 -> Agregada la funcionalidad de Abrir y Guardar ficheros
+v1.3 -> La ventana y los componentes ahora si se pueden redimensionar
+v1.2 -> Corregido el doble y triple click en texto
+v1.1 -> Agregado el menu contextual a la pantalla
+v1.0 -> Funcionalidad basica agregada

@@ -4,14 +4,32 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase controladora del PanelEditor y que gestiona los eventos 
+ * de edición del texto como es la fuente y el tamaño de este
+ * @author Luis Romero Moreno
+ * @version v1.7
+ *
+ */
 public class ControladorOpciones implements ActionListener {
 	
+	/**
+	 * Atributo que recogerá los eventos realizados en el menú de edición
+	 */
 	private VistaEditor ve;
 	
+	/**
+	 * Constructor de la clase principal 
+	 * @param ve VistaEditor que permite consultar y editar los atributos
+	 * de su clase
+	 */
 	public ControladorOpciones(VistaEditor ve){
 		this.ve = ve;
 	}
 
+	/**
+	 * Método que manejará los eventos recogidos por los botones de edición
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		int tamaño = ve.getAreaTexto().getFont().getSize();

@@ -17,18 +17,42 @@ import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 
+/**
+ * Panel que muestra los datos generales de este programa
+ * @author Luis Romero Moreno
+ * @version v1.7
+ */
 public class AcercaDe extends JFrame {
 
 	/**
-	 * 
+	 * Identificador de la clase
 	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * Panel principal de la clase que contiene al JFrame
+	 */
 	private JPanel panel;
+	/**
+	 * Etiquetas que muestran una imagen y los datos del programa
+	 */
 	private JLabel foto1, lblAutor, lblProfesor, lblCurso;
+	/**
+	 * Area textual (no editable) que muestra el changelog del
+	 * programa
+	 */
 	private JTextArea areaTexto;
+	/**
+	 * Barra de desplazamiento que contendrá el área de texto
+	 */
 	private JScrollPane barraDesplazamiento;
+	/**
+	 * Botón que liberará de la memoria esta ventana
+	 */
 	private JButton btnAceptar;
 	
+	/**
+	 * Constructor principal de la clase
+	 */
 	public AcercaDe() {
 		this.setTitle("Acerca del Editor de Texto");
 		getContentPane().setLayout(null);
@@ -78,9 +102,16 @@ public class AcercaDe extends JFrame {
 		
 		getContentPane().add(panel);
 		
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Recoge una foto de una ruta propia del programa, la inserta en la etiqueta 
+	 * foto1 y la redimensiona al tamaño de dicha etiqueta
+	 * @param ruta String que recoge la ruta del archivo desde donde se accederá a 
+	 * la imagen
+	 */
 	public void imprimeFoto(String ruta) {
 		ImageIcon fot = new ImageIcon(AcercaDe.class.getResource(ruta));
 		Icon icono = new ImageIcon(fot.getImage().getScaledInstance(foto1.getWidth(), 
@@ -88,6 +119,10 @@ public class AcercaDe extends JFrame {
 		foto1.setIcon(icono);
 	}
 	
+	/**
+	 * Lee desde un fichero propio de la aplicación Java (changeog.txt), e inserta 
+	 * el contenido en al área de texto de la clase 
+	 */
 	public void añadeTexto() {
 		FileReader fichero;
 		try{
@@ -105,7 +140,7 @@ public class AcercaDe extends JFrame {
 			}
 			fichero.close();
 		}catch(IOException ioe){
-			JOptionPane.showMessageDialog(this, "Error al leer el fichero", 
+			JOptionPane.showMessageDialog(this, "Error al leer el fichero changelog.txt", 
 					"Error de lectura", JOptionPane.ERROR_MESSAGE);
 		}
 		areaTexto.setCaretPosition(0);

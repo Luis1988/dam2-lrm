@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Inicio3RayaActivity" >
+
+    <Button
+        android:id="@+id/btnInicio"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnAdmin"
+        android:layout_alignRight="@+id/btnAdmin"
+        android:layout_below="@+id/tvAutor"
+        android:text="@string/txtStart" />
+
+    <Button
+        android:id="@+id/btnAcercaDe"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnInicio"
+        android:layout_alignRight="@+id/btnAdmin"
+        android:layout_below="@+id/btnInicio"
+        android:text="@string/txtAbout" />
+
+    <Button
+        android:id="@+id/btnAdmin"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnAcercaDe"
+        android:layout_centerHorizontal="true"
+        android:text="@string/txtAdmin" />
+
+    <ImageView
+        android:id="@+id/iv11"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/raya3" />
+
+    <TextView
+        android:id="@+id/tvAutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/app_name"
+        android:textColor="@color/cLogo"
+        android:textSize="30sp"
+        android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/btnSalir"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnAdmin"
+        android:layout_alignRight="@+id/btnAdmin"
+        android:layout_below="@+id/btnAdmin"
+        android:text="@string/txtExit" />
+
+</RelativeLayout>

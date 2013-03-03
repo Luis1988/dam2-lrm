@@ -52,5 +52,23 @@ public class RankingActivity extends Activity {
 			} while(fila.moveToNext());
 		bd.close();
 	}
+	
+	@Override
+	public void onBackPressed() {
+		Intent i = new Intent(this, AdminActivity.class);
+		startActivity(i);
+		finish();
+		return;
+	}
+	@Override
+	protected void onStop() {
+	    setResult(2);
+	    super.onStop();
+	}
+	@Override
+	protected void onDestroy() {
+	    setResult(2);
+	    super.onDestroy();
+	}
 
 }

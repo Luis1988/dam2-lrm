@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">3 en Raya</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <color name="cLogo">#3A01DF</color>
+    <string name="txtStart">Comenzar Juego</string>
+    <string name="txtAbout">Acerca De</string>
+    <string name="txtAdmin">Administrar Usuarios</string>
+    <string name="txtExit">Salir</string>
+    <string name="txtAcercaDe"><![CDATA[<b>Autor:</b> Luis Romero Moreno<br/>
+        <b>Profesor:</b> Eva María Palomo<br/>
+        <b>Curso:</b> 2º DAM (IES Ramón del Valle-Inclán)]]></string>
+    <string name="txtVolver">Volver</string>
+    <string name="txtNombre">Introduzca su usuario:</string>
+    <string name="txtAlta">Alta de Usuario</string>
+    <string name="txtRanking">Ranking de Usuarios</string>
+    <string name="txtReinicio">Reiniciar partida</string>
+
+</resources>

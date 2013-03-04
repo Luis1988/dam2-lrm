@@ -3,7 +3,7 @@
 <%@page import="java.util.Hashtable"%>
 <% String base = (String)application.getAttribute("base"); %>
 <jsp:useBean id="dataManager" scope="application"
-  class="eshop.model.DataManager"/>
+  class="eShop.model.DataManager"/>
 <div class="menu">
   <div class="box">
     <div class="title">Búsqueda rápida</div>

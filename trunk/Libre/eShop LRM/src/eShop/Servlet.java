@@ -15,10 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(
 		urlPatterns = { "/shop/*" }, 
 		initParams = { 
-				@WebInitParam(name = "jdbcDriver", value = "com.mysql.jdbc.Driver"),
-				@WebInitParam(name = "dbURL", value = "jdbc:mysql://localhost:3306/datoslrm"),
-				@WebInitParam(name = "usuario", value = "root"), 
-				@WebInitParam(name = "password", value = "usuario")
+				@WebInitParam(name = "jdbcDriver", value = "oracle.jdbc.driver.OracleDriver"),
+				@WebInitParam(name = "dbURL", value = "jdbc:oracle:thin:@localhost:1521:datoslrm"),
+				@WebInitParam(name = "usuario", value = "ESHOP"), 
+				@WebInitParam(name = "password", value = "ESHOP")
 		})
 public class Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

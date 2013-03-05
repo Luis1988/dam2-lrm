@@ -17,8 +17,10 @@ public class CategoriasBD {
 		try {
 			Statement stmt = conn.createStatement();
 			try {
-				ResultSet rs = stmt.executeQuery("SELECT * FROM CATEGORIES WHERE CATEGORY_ID ="+idCategoria);
-				cat = new Categoria(rs.getInt(1), rs.getString(2));
+				ResultSet rs = stmt.executeQuery("SELECT * FROM CATEGORIES WHERE CATEGORY_ID LIKE "+idCategoria);
+				while(rs.next()) {
+					cat = new Categoria(rs.getInt(1), rs.getString(2));
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {

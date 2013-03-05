@@ -77,10 +77,12 @@ public class LibroBD {
 			Statement stmt = conn.createStatement();
 			try {
 				ResultSet rs = stmt.executeQuery("SELECT * FROM BOOKS WHERE BOOK_ID = "+idLibro);
-				l.setIdLibro(rs.getString(1));
-				l.setTitulo(rs.getString(2));					
-				l.setAutor(rs.getString(3));
-				l.setPrecio(rs.getDouble(4));
+				while(rs.next()){
+					l.setIdLibro(rs.getString(1));
+					l.setTitulo(rs.getString(2));					
+					l.setAutor(rs.getString(3));
+					l.setPrecio(rs.getDouble(4));
+				}
 				rs.close();
 			} catch (SQLException e) {
 				e.printStackTrace();

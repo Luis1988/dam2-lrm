@@ -33,12 +33,9 @@ public class ControladorBotones implements ActionListener {
 					fSal.println("user: "+vista.getUsuario());
 					System.out.println("funciona");
 				}
-				
 			} catch (UnknownHostException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			vista.setVisibilidad();

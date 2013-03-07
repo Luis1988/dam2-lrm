@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <jsp:directive.page import="eShop.beans.Libro"/>
-<jsp:scriptlet>
+<%
 String base = (String)application.getAttribute("base");
 String imagen = (String)application.getAttribute("imageURL");
 String idLibro = request.getParameter("idLibro");
-</jsp:scriptlet>
+%>
 <jsp:useBean id="dataManager" scope="application" class="eShop.model.DataManager"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

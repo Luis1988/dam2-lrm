@@ -21,12 +21,12 @@
 <form><input type="hidden" name="action" value="confirmarPedido"/>
 <table>
 <tr><th>Detalles de Pedido</th><th><th></th></tr>
-<tr><td>Nombre de Entrega:</td><td><input type="text" name="nContacto" /></tr>
-<tr><td>Dirección de Entrega:</td><td><input type="text" name="address" /></tr>
+<tr><td>Nombre de Entrega:</td><td><input type="text" name="nombreEntrega" /></tr>
+<tr><td>Dirección de Entrega:</td><td><input type="text" name="direccionEntrega" /></tr>
 <tr><th>Detalles de la Tarjeta de Crédito</th><th><th></th></tr>
-<tr><td>Nombre en la Tarjeta de Crédito:</td><td><input type="text" name="nTarjeta" /></tr>
-<tr><td>Número Tarjeta de Crédito:</td><td><input type="text" name="numTarjeta" /></tr>
-<tr><td>Fecha Expiración Tarjeta de Crédito:</td><td><input type="text" name="fExp" /></tr>
+<tr><td>Nombre en la Tarjeta de Crédito:</td><td><input type="text" name="nombreTarjeta" /></tr>
+<tr><td>Número Tarjeta de Crédito:</td><td><input type="text" name="numeroTarjeta" /></tr>
+<tr><td>Fecha Expiración Tarjeta de Crédito:</td><td><input type="text" name="caducidadTarjeta" /></tr>
 <tr><td></td><td><input id="submit" type="submit" value="Comprar"></tr>
 </table>
 </form>

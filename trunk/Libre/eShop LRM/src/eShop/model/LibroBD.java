@@ -17,7 +17,7 @@ public class LibroBD {
 			Statement stmt = conn.createStatement();
 			try {
 				ResultSet rs = stmt.executeQuery("SELECT * FROM BOOKS WHERE TITLE LIKE '%"+clave+
-						"%' OR AUTHOR LIKE '%"+clave+"'%");
+						"%' OR AUTHOR LIKE '%"+clave+"%'");
 				while(rs.next()) {
 					Libro l = new Libro();
 					l.setIdLibro(rs.getString(1));

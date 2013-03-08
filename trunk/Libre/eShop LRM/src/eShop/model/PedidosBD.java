@@ -11,9 +11,9 @@ public class PedidosBD {
 			Cliente cliente) {
 			try {
 				stmt.executeUpdate("INSERT INTO ORDERS VALUES ("+
-						idPedido+","+cliente.getNombreEntrega()+","+
-						cliente.getDireccionEntrega()+","+cliente.getNombreTarjeta()+
-						","+cliente.getNumeroTarjeta()+","+cliente.getCaducidadTarjeta()+")");
+						idPedido+",'"+cliente.getNombreEntrega()+"','"+
+						cliente.getDireccionEntrega()+"','"+cliente.getNombreTarjeta()+
+						"','"+cliente.getNumeroTarjeta()+"','"+cliente.getCaducidadTarjeta()+"')");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

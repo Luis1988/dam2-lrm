@@ -1,6 +1,5 @@
 package eShop.model;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Enumeration;
@@ -16,10 +15,9 @@ public class DetallesPedidoBD {
 		while(enumList.hasMoreElements()) {
 			Carrito item = (Carrito) enumList.nextElement();
 			try {
-				stmt.executeUpdate("INSERT INTO ORDER_DETAILS(BOOK_ID,TITLE,AUTHOR,"+
-						"QUANTITY,PRICE,ORDER_ID) VALUES("+item.getIdLibro()+","+
-						item.getTitulo()+","+item.getAutor()+","+
-						item.getCantidad()+","+item.getPrecio()+","+idPedido);
+				stmt.executeUpdate("INSERT INTO ORDER_DETAILS VALUES(SECUENCIAID.NEXTVAL,"+item.getIdLibro()+",'"+
+						item.getTitulo()+"','"+item.getAutor()+"',"+
+						item.getCantidad()+","+item.getPrecio()+","+idPedido+")");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

@@ -1,6 +1,5 @@
 package correo;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,16 +7,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
-import javax.swing.JSeparator;
-import java.awt.Color;
 
-import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
-import javax.swing.AbstractListModel;
 import javax.swing.ListSelectionModel;
 
 public class Bandeja extends JFrame {
@@ -85,14 +82,8 @@ public class Bandeja extends JFrame {
 		JList<String> list = new JList<String>();
 		scrollPane_2.setViewportView(list);
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		list.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Hola", "Hola", "Hola"};
-			public int getSize() {
-				return values.length;
-			}
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});
+		ArrayList<String> lista = new ArrayList<String>();
+		ListaCorreo<String> listaCorreo = new ListaCorreo<String>(lista);
+		list.setModel(listaCorreo);
 	}
 }

@@ -1,0 +1,119 @@
+package correo;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.ArrayList;
+
+public class LecturaCorreo {
+
+	private Socket servidor;
+	private String usuario, password;
+	private ArrayList<String> correos;
+	private BufferedReader lectura;
+	private PrintWriter escritura;
+
+	public LecturaCorreo(String ip, int puerto, String usuario, String password) {
+		try {
+			servidor = new Socket(ip, puerto);
+			this.usuario = usuario;
+			this.password = password;
+			lectura = new BufferedReader(new InputStreamReader(servidor.getInputStream()));
+			escritura = new PrintWriter(servidor.getOutputStream(), true);
+			correos = new ArrayList<String>();
+			if(autentificaUsuario()){
+				setCorreos();
+			}
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public boolean autentificaUsuario() throws IOException {
+		boolean res = false;
+		String linea = lectura.readLine();
+		if(linea.contains("OK"))
+			escritura.println("user "+usuario);
+		linea = lectura.readLine();
+		if(linea.contains("OK"))
+			escritura.println("pass "+password);
+		linea = lectura.readLine();
+		if(linea.contains("ERR"))
+			res = false;
+		if(linea.contains("OK")){
+			res = true;
+			escritura.println("list");
+		}
+		return res;
+	}
+
+	public ArrayList<String> getCorreos() {
+		return correos;
+	}
+
+	public void setCorreos() throws IOException {
+		String linea = lectura.readLine();
+		ArrayList<String> lista = new ArrayList<String>();
+		if(linea.contains("OK")){
+			linea = lectura.readLine();
+			String numMens = "";
+			int i = 0;
+			while(!(linea.charAt(i)+"").equals(" ")) {
+				numMens+=linea.charAt(i);
+				i++;
+			}
+			lista.add(numMens);
+		}
+		linea = lectura.readLine();
+		for(int i = 1; i <= lista.size(); i++) {
+			correos.add(getAsunto(i));
+		}
+	}
+
+	public String getAsunto(int index) throws IOException {
+		String res = "";
+		escritura.println("retr "+index);
+		String linea = lectura.readLine();
+		while(!linea.contains("subject")) {
+			if(linea.contains("Received"))
+				res = linea.substring(15);
+			linea = lectura.readLine();
+		}
+		if(linea.contains("subject"))
+			res = "Asunto: "+linea.substring(10)+" - Remitente: "+res;
+		if(res.equals(""))
+			res = "(Sin asunto)";
+		return res;
+	}
+
+	public void cierraConexion(Socket socket) throws IOException {
+		socket.close();
+	}
+	
+	public String getCorreo(int index) throws IOException {
+		String res = "";
+		escritura.println("retr "+index);
+		String linea = lectura.readLine();
+		while(!linea.equals(".")) {
+			res+=linea+"\n";
+			linea = lectura.readLine();
+		}
+		return res;
+	}
+
+	public static void main(String[] args) {
+		LecturaCorreo lc = new LecturaCorreo("localhost", 110, "luis1988", "sandrilla");
+		try {
+			System.out.println(lc.getCorreo(1));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -35,7 +35,7 @@ public class EscrituraCorreo {
 	private void ejecucion() {
 		try {
 			String linea = lectura.readLine();
-			escritura.println("ehlo "+ip);
+			escritura.println("ehlo "+vr.getVistaCorreo().getUsuario());
 			linea = lectura.readLine();
 			while(!linea.contains("DSN")) {
 				linea = lectura.readLine();

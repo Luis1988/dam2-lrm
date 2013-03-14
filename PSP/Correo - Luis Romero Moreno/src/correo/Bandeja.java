@@ -29,6 +29,7 @@ public class Bandeja extends JFrame implements VistaBandeja {
 	private JScrollPane scrollPane, scrollPane_2;
 	private LecturaCorreo lc;
 	private JList<String> list;
+	private VistaCorreo vc;
 
 	/**
 	 * Launch the application.
@@ -37,7 +38,7 @@ public class Bandeja extends JFrame implements VistaBandeja {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Bandeja frame = new Bandeja(null);
+					Bandeja frame = new Bandeja(null, null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -49,7 +50,8 @@ public class Bandeja extends JFrame implements VistaBandeja {
 	/**
 	 * Create the frame.
 	 */
-	public Bandeja(LecturaCorreo lc) {
+	public Bandeja(VistaCorreo vc, LecturaCorreo lc) {
+		this.vc = vc;
 		this.lc = lc;
 		setTitle("Bandeja de Correo Electr\u00F3nico");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -147,5 +149,10 @@ public class Bandeja extends JFrame implements VistaBandeja {
 	@Override
 	public void setCorreoLeido(String s) {
 		taCorreo.setText(s);	
+	}
+
+	@Override
+	public VistaCorreo getVistaCorreo() {
+		return vc;
 	}
 }

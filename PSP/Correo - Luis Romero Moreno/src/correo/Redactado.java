@@ -22,6 +22,7 @@ public class Redactado extends JFrame implements VistaRedactado {
 	private VistaBandeja vb;
 	private JTextArea redactado;
 	private JButton btnEnviarCorreo, btnDescartar;
+	private VistaCorreo vc;
 
 	/**
 	 * Launch the application.
@@ -30,7 +31,7 @@ public class Redactado extends JFrame implements VistaRedactado {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Redactado frame = new Redactado(null);
+					Redactado frame = new Redactado(null,null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +43,8 @@ public class Redactado extends JFrame implements VistaRedactado {
 	/**
 	 * Create the frame.
 	 */
-	public Redactado(VistaBandeja vb) {
+	public Redactado(VistaCorreo vc, VistaBandeja vb) {
+		this.vc = vc;
 		this.vb = vb;
 		setTitle("Redactar correo");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -118,17 +120,21 @@ public class Redactado extends JFrame implements VistaRedactado {
 	@Override
 	public String getIp() {
 		// TODO Auto-generated method stub
-		return null;
+		return vc.getSMTPIP();
 	}
 
 	@Override
 	public int getPuerto() {
-		// TODO Auto-generated method stub
-		return 0;
+		return vc.getSMTPPUERTO();
 	}
 
 	@Override
 	public void liberarVentana() {
 		dispose();
+	}
+
+	@Override
+	public VistaCorreo getVistaCorreo() {
+		return vc;
 	}
 }

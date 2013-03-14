@@ -23,23 +23,11 @@ public class ControladorBotones implements ActionListener {
 			System.exit(0);
 		}
 		if(ae.getActionCommand().equals(VistaCorreo.ACEPTAR)) {
-			try {
-				Socket servidor = new Socket("localhost", 110);
-				BufferedReader fEnt = new BufferedReader(new InputStreamReader(servidor.getInputStream()));
-				PrintWriter fSal = new PrintWriter(servidor.getOutputStream(), true);
-				String linea = fEnt.readLine();
-				while(!linea.contains("OK")){
-					linea = fEnt.readLine();
-					fSal.println("user: "+vista.getUsuario());
-					System.out.println("funciona");
-				}
-			} catch (UnknownHostException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			LecturaCorreo lc = new LecturaCorreo(vista, "localhost", 110, 
+					vista.getUsuario(), vista.getPassword());
 			vista.setVisibilidad();
-			new Bandeja(vista.getUsuario(), vista.getPassword());
+			Bandeja b = new Bandeja(lc);
+			b.setVisible(true);
 		}
 
 	}

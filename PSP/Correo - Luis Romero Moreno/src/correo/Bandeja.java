@@ -32,7 +32,7 @@ public class Bandeja extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Bandeja frame = new Bandeja("aaa", "aaa");
+					Bandeja frame = new Bandeja(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,10 +44,10 @@ public class Bandeja extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Bandeja(String usuario, String password) {
+	public Bandeja(LecturaCorreo lc) {
 		setTitle("Bandeja de Correo Electr\u00F3nico");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(500, 500, 473, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -56,19 +56,19 @@ public class Bandeja extends JFrame {
 		JLabel lblCorreo = new JLabel("Correo");
 		lblCorreo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCorreo.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 27));
-		lblCorreo.setBounds(10, 11, 149, 39);
+		lblCorreo.setBounds(26, 10, 149, 39);
 		contentPane.add(lblCorreo);
 		
 		JButton btnRedactar = new JButton("Redactar");
-		btnRedactar.setBounds(10, 61, 149, 23);
+		btnRedactar.setBounds(10, 61, 178, 23);
 		contentPane.add(btnRedactar);
 		
 		JButton btnSincronizarCorreo = new JButton("Sincronizar correo");
-		btnSincronizarCorreo.setBounds(10, 95, 149, 23);
+		btnSincronizarCorreo.setBounds(10, 96, 178, 23);
 		contentPane.add(btnSincronizarCorreo);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 129, 414, 122);
+		scrollPane.setBounds(10, 166, 414, 122);
 		contentPane.add(scrollPane);
 		
 		JTextArea textArea = new JTextArea();
@@ -76,14 +76,18 @@ public class Bandeja extends JFrame {
 		scrollPane.setViewportView(textArea);
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(169, 11, 252, 107);
+		scrollPane_2.setBounds(209, 10, 252, 122);
 		contentPane.add(scrollPane_2);
 		
 		JList<String> list = new JList<String>();
 		scrollPane_2.setViewportView(list);
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		ArrayList<String> lista = new ArrayList<String>();
+		ArrayList<String> lista = lc.getCorreos();
 		ListaCorreo<String> listaCorreo = new ListaCorreo<String>(lista);
 		list.setModel(listaCorreo);
+		
+		JButton btnExit = new JButton("Salir del Programa");
+		btnExit.setBounds(10, 131, 178, 23);
+		contentPane.add(btnExit);
 	}
 }

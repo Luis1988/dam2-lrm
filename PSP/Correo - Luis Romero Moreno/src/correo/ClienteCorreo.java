@@ -46,40 +46,40 @@ public class ClienteCorreo extends JFrame implements VistaCorreo {
 		setTitle("Cliente Correo");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 338, 186);
+		setBounds(500, 500, 338, 145);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		btnCancelar = new JButton("Cancelar");
-		btnCancelar.setBounds(12, 116, 117, 28);
+		btnCancelar.setBounds(12, 106, 117, 28);
 		contentPane.add(btnCancelar);
 		
 		btnAceptar = new JButton("Aceptar");
-		btnAceptar.setBounds(196, 116, 117, 28);
+		btnAceptar.setBounds(209, 106, 117, 28);
 		contentPane.add(btnAceptar);
 		
 		JLabel lblUsuario = new JLabel("Usuario:");
-		lblUsuario.setBounds(12, 58, 101, 15);
+		lblUsuario.setBounds(12, 52, 101, 15);
 		contentPane.add(lblUsuario);
 		
 		JLabel lblContrasea = new JLabel("Contraseña:");
-		lblContrasea.setBounds(12, 84, 101, 15);
+		lblContrasea.setBounds(12, 79, 101, 15);
 		contentPane.add(lblContrasea);
-		tfUsuario.setBounds(123, 53, 190, 25);
+		tfUsuario.setBounds(136, 47, 190, 25);
 		contentPane.add(tfUsuario);
 		tfUsuario.setColumns(10);
 		
 		tfPassword = new JPasswordField();
 		tfPassword.setColumns(10);
-		tfPassword.setBounds(123, 79, 190, 25);
+		tfPassword.setBounds(136, 74, 190, 25);
 		contentPane.add(tfPassword);
 		
 		JLabel lblClienteCorreo = new JLabel("Cliente Correo");
 		lblClienteCorreo.setForeground(Color.BLUE);
 		lblClienteCorreo.setFont(new Font("Loma", Font.BOLD, 23));
-		lblClienteCorreo.setBounds(84, 11, 168, 28);
+		lblClienteCorreo.setBounds(64, 12, 190, 28);
 		contentPane.add(lblClienteCorreo);
 		
 		controladorBotones(this);
@@ -97,6 +97,7 @@ public class ClienteCorreo extends JFrame implements VistaCorreo {
 		return tfUsuario.getText();
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub

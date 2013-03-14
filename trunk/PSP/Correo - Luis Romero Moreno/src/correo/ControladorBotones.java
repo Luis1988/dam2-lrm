@@ -23,10 +23,10 @@ public class ControladorBotones implements ActionListener {
 			System.exit(0);
 		}
 		if(ae.getActionCommand().equals(VistaCorreo.ACEPTAR)) {
-			LecturaCorreo lc = new LecturaCorreo(vista, "localhost", 110, 
+			LecturaCorreo lc = new LecturaCorreo(vista, vista.getSMTPIP(), vista.getSMTPPUERTO(), 
 					vista.getUsuario(), vista.getPassword());
 			vista.setVisibilidad();
-			Bandeja b = new Bandeja(lc);
+			Bandeja b = new Bandeja(vista, lc);
 			b.setVisible(true);
 		}
 

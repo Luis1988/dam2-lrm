@@ -20,7 +20,7 @@ public class LecturaCorreo {
 	public LecturaCorreo(VistaCorreo vc, String ip, int puerto, String usuario, String password) {
 		vista = vc;
 		try {
-			servidor = new Socket(ip, puerto);
+			servidor = new Socket(vc.getPOP3IP(), vc.getPOP3PUERTO());
 			this.usuario = usuario;
 			this.password = password;
 			lectura = new BufferedReader(new InputStreamReader(servidor.getInputStream()));

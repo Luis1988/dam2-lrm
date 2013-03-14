@@ -29,7 +29,7 @@ public class ControladorBandeja implements ActionListener, ListSelectionListener
 			vb.actualizaLista(vb.getLectura().getCorreos());
 		}
 		if(ae.getActionCommand().equals(VistaBandeja.REDACTAR)){
-			new Redactado(vb).setVisible(true);
+			new Redactado(vb.getVistaCorreo(),vb).setVisible(true);
 		}
 			
 	}

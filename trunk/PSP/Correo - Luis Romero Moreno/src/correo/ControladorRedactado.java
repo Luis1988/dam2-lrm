@@ -17,6 +17,7 @@ public class ControladorRedactado implements ActionListener {
 			vr.liberarVentana();
 		if(ae.getActionCommand().equals(VistaRedactado.ENVIAR)){
 			new EscrituraCorreo(vr, vr.getIp(), vr.getPuerto());
+			vr.liberarVentana();
 		}
 
 	}

@@ -17,5 +17,6 @@ public interface VistaBandeja {
 	public void actualizaLista(ArrayList<String> correos);
 	public JList<String> getList();
 	public void setCorreoLeido(String s);
+	public VistaCorreo getVistaCorreo();
 
 }

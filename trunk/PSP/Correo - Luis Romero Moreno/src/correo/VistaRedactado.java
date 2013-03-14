@@ -12,5 +12,6 @@ public interface VistaRedactado {
 	public String getIp();
 	public int getPuerto();
 	public void liberarVentana();
+	public VistaCorreo getVistaCorreo();
 
 }

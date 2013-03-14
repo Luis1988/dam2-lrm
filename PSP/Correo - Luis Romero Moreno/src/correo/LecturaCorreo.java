@@ -73,16 +73,19 @@ public class LecturaCorreo {
 			String linea = lectura.readLine();
 			ArrayList<String> lista = new ArrayList<String>();
 			if(linea.contains("OK")){
-				linea = lectura.readLine();
-				String numMens = "";
-				int i = 0;
-				while(!(linea.charAt(i)+"").equals(" ")) {
-					numMens+=linea.charAt(i);
-					i++;
+				while(!linea.contains(".")){
+					linea = lectura.readLine();
+					if(!linea.contains(".")){
+						String numMens = "";
+						int i = 0;
+						while(!(linea.charAt(i)+"").equals(" ")) {
+							numMens+=linea.charAt(i);
+							i++;
+						}
+						lista.add(numMens);
+					}
 				}
-				lista.add(numMens);
 			}
-			linea = lectura.readLine();
 			for(int i = 1; i <= lista.size(); i++) {
 				correos.add(getAsunto(i));
 			}
@@ -111,8 +114,8 @@ public class LecturaCorreo {
 		return res;
 	}
 
-	public void cierraConexion(Socket socket) throws IOException {
-		socket.close();
+	public void cierraConexion() throws IOException {
+		servidor.close();
 	}
 
 	public String getCorreo(int index) {
@@ -120,14 +123,21 @@ public class LecturaCorreo {
 		try {
 			escritura.println("retr "+index);
 			String linea = lectura.readLine();
-			while(!linea.equals(".")) {
-				res+=linea+"\n";
+			if(linea.contains("OK")){
 				linea = lectura.readLine();
+				while(!linea.equals(".")) {
+					res+=linea+"\n";
+					linea = lectura.readLine();
+				}
 			}
 		} catch (IOException ioe) {
 			// TODO Implementar error
 		}
 		return res;
+	}
+	
+	public String getUsuario() {
+		return usuario;
 	}
 
 }

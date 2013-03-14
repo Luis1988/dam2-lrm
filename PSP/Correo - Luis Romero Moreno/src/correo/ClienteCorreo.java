@@ -22,6 +22,10 @@ public class ClienteCorreo extends JFrame implements VistaCorreo {
 	private final JTextField tfUsuario = new JTextField();
 	private JPasswordField tfPassword;
 	private JButton btnAceptar, btnCancelar;
+	private JTextField tfSMTP_ip;
+	private JTextField tfSMTP_puerto;
+	private JTextField tfPOP3_ip;
+	private JTextField tfPOP3_puerto;
 
 	/**
 	 * Launch the application.
@@ -46,7 +50,7 @@ public class ClienteCorreo extends JFrame implements VistaCorreo {
 		setTitle("Cliente Correo");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 500, 338, 145);
+		setBounds(500, 500, 338, 266);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -82,6 +86,46 @@ public class ClienteCorreo extends JFrame implements VistaCorreo {
 		lblClienteCorreo.setBounds(64, 12, 190, 28);
 		contentPane.add(lblClienteCorreo);
 		
+		JLabel lblSmtpIp = new JLabel("SMTP IP:");
+		lblSmtpIp.setBounds(12, 146, 101, 15);
+		contentPane.add(lblSmtpIp);
+		
+		JLabel lblSmtpPuerto = new JLabel("SMTP Puerto:");
+		lblSmtpPuerto.setBounds(12, 173, 101, 15);
+		contentPane.add(lblSmtpPuerto);
+		
+		JLabel lblPopIp = new JLabel("POP3 IP:");
+		lblPopIp.setBounds(12, 200, 101, 15);
+		contentPane.add(lblPopIp);
+		
+		JLabel lblPopPuerto = new JLabel("POP3 Puerto:");
+		lblPopPuerto.setBounds(12, 227, 101, 15);
+		contentPane.add(lblPopPuerto);
+		
+		tfSMTP_ip = new JTextField();
+		tfSMTP_ip.setText("localhost");
+		tfSMTP_ip.setColumns(10);
+		tfSMTP_ip.setBounds(136, 144, 190, 25);
+		contentPane.add(tfSMTP_ip);
+		
+		tfSMTP_puerto = new JTextField();
+		tfSMTP_puerto.setText("25");
+		tfSMTP_puerto.setColumns(10);
+		tfSMTP_puerto.setBounds(136, 171, 190, 25);
+		contentPane.add(tfSMTP_puerto);
+		
+		tfPOP3_ip = new JTextField();
+		tfPOP3_ip.setText("localhost");
+		tfPOP3_ip.setColumns(10);
+		tfPOP3_ip.setBounds(136, 198, 190, 25);
+		contentPane.add(tfPOP3_ip);
+		
+		tfPOP3_puerto = new JTextField();
+		tfPOP3_puerto.setText("110");
+		tfPOP3_puerto.setColumns(10);
+		tfPOP3_puerto.setBounds(136, 222, 190, 25);
+		contentPane.add(tfPOP3_puerto);
+		
 		controladorBotones(this);
 	}
 
@@ -106,5 +150,25 @@ public class ClienteCorreo extends JFrame implements VistaCorreo {
 	
 	public void setVisibilidad() {
 		this.setVisible(false);
+	}
+
+	@Override
+	public String getSMTPIP() {
+		return tfSMTP_ip.getText();
+	}
+
+	@Override
+	public int getSMTPPUERTO() {
+		return Integer.parseInt(tfSMTP_puerto.getText());
+	}
+
+	@Override
+	public String getPOP3IP() {
+		return tfPOP3_ip.getText();
+	}
+
+	@Override
+	public int getPOP3PUERTO() {
+		return Integer.parseInt(tfPOP3_puerto.getText());
 	}
 }

@@ -14,8 +14,7 @@ public class ListaCorreo<E> implements ListModel<E> {
 	}
 
 	@Override
-	public void addListDataListener(ListDataListener arg0) {
-		// TODO Auto-generated method stub
+	public void addListDataListener(ListDataListener ld) {
 		
 	}
 
@@ -31,7 +30,6 @@ public class ListaCorreo<E> implements ListModel<E> {
 
 	@Override
 	public void removeListDataListener(ListDataListener arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 

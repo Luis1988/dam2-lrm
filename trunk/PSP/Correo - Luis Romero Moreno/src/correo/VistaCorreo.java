@@ -8,5 +8,9 @@ public interface VistaCorreo {
 	public String getUsuario();
 	public String getPassword();
 	public void setVisibilidad();
+	public String getSMTPIP();
+	public int getSMTPPUERTO();
+	public String getPOP3IP();
+	public int getPOP3PUERTO();
 
 }

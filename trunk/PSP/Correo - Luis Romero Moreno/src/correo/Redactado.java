@@ -44,11 +44,12 @@ public class Redactado extends JFrame implements VistaRedactado {
 	 * Create the frame.
 	 */
 	public Redactado(VistaCorreo vc, VistaBandeja vb) {
+		setResizable(false);
 		this.vc = vc;
 		this.vb = vb;
 		setTitle("Redactar correo");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(500, 500, 450, 293);
+		setBounds(500, 500, 450, 301);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -136,5 +137,24 @@ public class Redactado extends JFrame implements VistaRedactado {
 	@Override
 	public VistaCorreo getVistaCorreo() {
 		return vc;
+	}
+
+	@Override
+	public void setTamañoComponentes(int anchuraVentana, int alturaVentana) {
+		destinatario.setSize(anchuraVentana-20, destinatario.getHeight());
+		asunto.setSize(anchuraVentana-20, asunto.getHeight());
+		btnEnviarCorreo.setSize(anchuraVentana-20, btnEnviarCorreo.getHeight());
+		btnDescartar.setSize(anchuraVentana-20, btnDescartar.getHeight());
+		redactado.setSize(anchuraVentana-20, alturaVentana-200);
+	}
+
+	@Override
+	public int getAnchuraVentana() {
+		return getWidth();
+	}
+
+	@Override
+	public int getAlturaVentana() {
+		return getHeight();
 	}
 }

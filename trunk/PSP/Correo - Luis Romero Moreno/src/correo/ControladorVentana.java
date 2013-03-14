@@ -13,19 +13,20 @@ import java.awt.event.WindowStateListener;
  *
  */
 public class ControladorVentana implements ComponentListener, WindowStateListener {
-	
+
 	/**
 	 * Atributo que recoge los eventos del PanelEditor
 	 */
 	private VistaBandeja vb;
-	
+
 	/**
 	 * Constructor principal de la clase
 	 * @param ve VistaEditor que recoger y edita los atributos propios de la clase
 	 * PanelEditor
 	 */
-	public ControladorVentana(VistaBandeja vb){
+	public ControladorVentana(VistaBandeja vb) {
 		this.vb = vb;
+
 	}
 
 	/**
@@ -48,7 +49,7 @@ public class ControladorVentana implements ComponentListener, WindowStateListene
 	 * din�mica
 	 */
 	@Override
-	public void componentResized(ComponentEvent arg0) {
+	public void componentResized(ComponentEvent arg0) throws NullPointerException {
 		vb.setTamañoComponentes(vb.getAnchuraVentana(), vb.getAlturaVentana());
 	}
 
@@ -68,7 +69,6 @@ public class ControladorVentana implements ComponentListener, WindowStateListene
 	@Override
 	public void windowStateChanged(WindowEvent arg0) {
 		vb.setTamañoComponentes(vb.getAnchuraVentana(), vb.getAlturaVentana());
-		
 	}
 
 }

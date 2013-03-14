@@ -13,5 +13,8 @@ public interface VistaRedactado {
 	public int getPuerto();
 	public void liberarVentana();
 	public VistaCorreo getVistaCorreo();
+	public void setTamañoComponentes(int anchuraVentana, int alturaVentana);
+	public int getAnchuraVentana();
+	public int getAlturaVentana();
 
 }
